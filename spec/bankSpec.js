@@ -12,14 +12,18 @@ describe("Bank", () => {
   });
 
   it('can have money deposited into bank account', () => {
-    bank.money_transaction(100)
+    bank.moneyTransaction(100)
     expect(bank.balance).toEqual(100);
   });
 
   it('can have money taken out of bank account', () => {
-    bank.money_transaction(100)
-    bank.money_transaction(-30)
+    bank.moneyTransaction(100)
+    bank.moneyTransaction(-30)
     expect(bank.balance).toEqual(70);
+  });
+
+  it('should throw error string if insufficient funds', () => {
+    expect(function(){bank.moneyTransaction(-10)}).toThrow('insufficient funds');
   });
 
 });
