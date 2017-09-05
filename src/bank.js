@@ -4,7 +4,8 @@ class Bank {
     this.log = 0;
   }
 
-  money_deposited(money) {
+  money_transaction(money) {
+    if (this.balance < 0) { return 'insufficient funds'}
     this.balance += money
   }
 }
