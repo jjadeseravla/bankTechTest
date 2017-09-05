@@ -3,6 +3,10 @@ class Bank {
     this.balance = 0;
     this.log = 0;
   }
+
+  money_deposited(money) {
+    this.balance += money
+  }
 }
 
 

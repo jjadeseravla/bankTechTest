@@ -11,4 +11,9 @@ describe("Bank", () => {
     expect(bank.balance).toEqual(0);
   });
 
+  it('can have money deposited into bank account', () => {
+    bank.money_deposited(100)
+    expect(bank.balance).toEqual(100);
+  });
+
 });
