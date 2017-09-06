@@ -26,4 +26,9 @@ describe("Bank", () => {
     expect(function(){bank.moneyTransaction(-10)}).toThrow('insufficient funds');
   });
 
+  it('should not allow you to take out more money than you have', () => {
+    bank.moneyTransaction(5)
+    expect(function(){bank.moneyTransaction(-10)}).toThrow('insufficient funds');
+  });
+
 });
